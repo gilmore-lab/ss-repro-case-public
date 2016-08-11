@@ -41,6 +41,8 @@ Please save your diagram alongside this completed case study template.
 
 ##### Workflow narrative
 
+This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays and create the output datafiles which include stimuli type and response information. All datafiles were processed in R.
+
 Referring to your diagram, describe your workflow for this specific project, from soup to nuts. Imagine walking a friend or a colleague through the basic steps, paying particular attention to links between steps. Don't forget to include "messy parts", loops, aborted efforts, and failures.
 
 It may be helpful to consider the following questions, where interesting, applicable, and non-obvious from context. For each part of your workflow:
