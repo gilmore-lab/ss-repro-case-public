@@ -2,10 +2,9 @@
 ---
 AuthorName: Rick Gilmore  
 Affiliation: Penn State University  
-WorkflowTitle:
-WorkflowDiagramURL:
-Discipline: Psychology
-Software: R
+WorkflowTitle: Developing R Code for the Processing and Analysis of Optic Flow Data    WorkflowDiagramURL:
+Discipline: Psychology  
+Software: R  
 DOI_URL:
 ---
 
@@ -16,7 +15,7 @@ DOI_URL:
 
 2) Define what the term "reproducibility" means to you generally and/or in the particular context of your case study.
 
-Reproducibility means that the processing of a dataset can be created multiple times by many users using the same workflow/code and get the same results.
+Reproducibility means that the processing of a dataset can be created multiple times by many users using the same workflow/code and get the same results. It also means that as I collect more data a few commands can be run to update the results based on the increased number of data sets.
 
 ##### Workflow diagram
 
@@ -41,11 +40,11 @@ Please save your diagram alongside this completed case study template.
 
 ##### Workflow narrative
 
-This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays and create the output datafiles which include stimuli type and response information. Four blocks of data, resulting in 4 separate output files were generated for each participant. All datafiles were processed in R. 
+This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays and create the output datafiles which include stimuli type and response information. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. All data files were processed in R. 
 
-All output datafiles were transferred from the data collection computer to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered into a .csv file for all participants and also placed on Box. Once all data needed for analysis was placed on Box, R code was written to clean and merge the participant session output information and metadata into a single file making it usable for analysis.
+All output data files were transferred from the data collection computer to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered into a .csv file for all participants and also placed on Box. Once all data needed for analysis was placed on Box, R code was written to clean and merge the participant session output information and metadata into a single file making it usable for analysis.
 
-All datafiles are shared on Databrary (https://nyu.databrary.org/volume/218) including the output datafiles and participant metadata. Analysis files are shared on a GitHub repository.
+All data files are shared on Databrary (https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on a GitHub repository.
 
 The proportion of correct responses and response times was analyzed using generalized linear mixed effects modeling in R. 
 
