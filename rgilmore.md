@@ -40,13 +40,20 @@ Please save your diagram alongside this completed case study template.
 
 ##### Workflow narrative
 
-This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays and create the output datafiles which include stimuli type and response information. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. All data files were processed in R. 
+This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays consisting of two side-by-side, time varying annular shaped optic flow displays. One display depicted random (0% coherent) motion while the other depicted radial or translational motion at one of two coherence level profiles (20, 40, 60, 80%) or (15,30,45,60%). The participant indicated their choice of which display consisted of coherent motion by pointing to the monitor. A speed of 2 or 8 deg/s was used for a single run. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. The csv file includes pattern type and coherency level of the stimuli, and reaction time and accuracy of the participant responses.
 
-All output data files were transferred from the data collection computer to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered into a .csv file for all participants and also placed on Box. Once all data needed for analysis was placed on Box, R code was written to clean and merge the participant session output information and metadata into a single file making it usable for analysis.
+All output data files were transferred from the data collection computer manually to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered into a .csv file for all participants and also placed on Box. Once enough data was collected for analysis, R code was designed to process the data and produce plots for data analyses.
+
+The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed.
+
+It takes much longer to generate the code, but the resulting ease of generating data usable for publication much easier.
+
 
 All data files are shared on Databrary (https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on a GitHub repository.
 
-The proportion of correct responses and response times was analyzed using generalized linear mixed effects modeling in R. 
+A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. R makes it easy to create a workflow for a type of data and reproduce it as more data are collected. This makes data analyses an on going process and not something that is saved up until the end which makes writing abstracts and papers less cumbersome.
+
+
 
 
 
@@ -78,6 +85,8 @@ In addition to detailing the steps of the workflow, you may wish to consider the
 ##### Pain points
 *Describe in detail the steps of a reproducible workflow which you consider to be particularly painful. How do you handle these? How do you avoid them? (200-400 words)*
 
+The data transfer and updating of the participant metadata file need to be made more automated.
+
 ##### Key benefits
 *Discuss one or several sections of your workflow that you feel makes your approach better than the "normal" non-reproducible workflow that others might use in your field. What does your workflow do better than the one used by your lesser-skilled colleagues and students, and why? What would you want them to learn from your example? (200-400 words)*
 
@@ -97,6 +106,9 @@ In addition to detailing the steps of the workflow, you may wish to consider the
 4) What do you view as the major incentives for doing reproducible research?
 
 5) Are there any broad reproducibility best practices that you'd recommend for researchers in your field?
+
+Automate as much as possible.
+Documentation, Documentation, Documentation!
 
 6) Would you recommend any specific websites, training courses, or books for learning more about reproducibility?
 
