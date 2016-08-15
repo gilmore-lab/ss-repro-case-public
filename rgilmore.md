@@ -2,8 +2,9 @@
 ---
 AuthorName: Rick Gilmore  
 Affiliation: Penn State University  
-WorkflowTitle: Developing R Code for the Processing and Analysis of Optic Flow Data    WorkflowDiagramURL:
-Discipline: Psychology  
+WorkflowTitle: Developing R Code for the Processing and Analysis of Optic Flow Data  
+WorkflowDiagramURL:  
+Discipline: Psychology    
 Software: R  
 DOI_URL:
 ---
@@ -15,7 +16,7 @@ DOI_URL:
 
 2) Define what the term "reproducibility" means to you generally and/or in the particular context of your case study.
 
-Reproducibility means that the processing of a dataset can be created multiple times by many users using the same workflow/code and get the same results. It also means that as I collect more data a few commands can be run to update the results based on the increased number of data sets.
+Reproducibility means that the processing of a dataset can be created multiple times by many users using the same workflow/code and get the same results. It also means that as more data is collected a few commands can be run to update the results based on the increased number of data sets.
 
 ##### Workflow diagram
 
@@ -42,14 +43,16 @@ Please save your diagram alongside this completed case study template.
 
 This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays consisting of two side-by-side, time varying annular shaped optic flow displays. One display depicted random (0% coherent) motion while the other depicted radial or translational motion at one of two coherence level profiles (20, 40, 60, 80%) or (15,30,45,60%). The participant indicated their choice of which display consisted of coherent motion by pointing to the monitor. A speed of 2 or 8 deg/s was used for a single run. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. The csv file includes pattern type and coherency level of the stimuli, and reaction time and accuracy of the participant responses.
 
-All output data files were transferred from the data collection computer manually to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered into a .csv file for all participants and also placed on Box. Once enough data was collected for analysis, R code was designed to process the data and produce plots for data analyses.
+All output data files were transferred from the data collection computer manually to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered manually into Databrary as part of the participan session file and into a .csv file for all participants and placed on Box. R code was designed to process the data and produce plots for data analyses.
 
-The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed.
+The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed. Once the aggregate plots are generated, results were summarized and results were prepared for publication in a conference abstract and/or a journal.
 
-It takes much longer to generate the code, but the resulting ease of generating data usable for publication much easier.
+It takes longer to generate code, but the resulting ease of generating data usable for publication much easier. The human error is also reduced by automating as much of the data processing steps as possible.
+
+All data files are shared on Databrary (https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on GitHub (gilmorelab/moco-3pattern-psychophysics/child-laminar-radial). **The R files and merged datafile need to be added to GitHub** 
+Links to the GitHub repository and any resulting publications are included in the Databrary volume.
 
 
-All data files are shared on Databrary (https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on a GitHub repository.
 
 A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. R makes it easy to create a workflow for a type of data and reproduce it as more data are collected. This makes data analyses an on going process and not something that is saved up until the end which makes writing abstracts and papers less cumbersome.
 
@@ -85,7 +88,9 @@ In addition to detailing the steps of the workflow, you may wish to consider the
 ##### Pain points
 *Describe in detail the steps of a reproducible workflow which you consider to be particularly painful. How do you handle these? How do you avoid them? (200-400 words)*
 
-The data transfer and updating of the participant metadata file need to be made more automated.
+The data transfer is time consuming. The output datafiles are stored locally in a folder for the .csv files and another folder for the .mp4 files. Uploading data (.mp4 and .csv to Databrary in order has to happen manually as it does not reorder files by file name. The .csv data also needs to be uploaded to Box manually. 
+
+The updating of the participant metadata file is made relatively easy as the metadata that is entered into Databrary can be exported as a .csv file. From there the unnecessary columns (e.g. Race, Ethnicity, Task name) and rows (e.g. pilot participant) and only the participant ID, test date, day age, gender columns are kept.
 
 ##### Key benefits
 *Discuss one or several sections of your workflow that you feel makes your approach better than the "normal" non-reproducible workflow that others might use in your field. What does your workflow do better than the one used by your lesser-skilled colleagues and students, and why? What would you want them to learn from your example? (200-400 words)*
