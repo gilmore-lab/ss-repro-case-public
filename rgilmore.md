@@ -1,11 +1,11 @@
 
 ---
-AuthorName: Rick Gilmore  
+AuthorName: Rick O. Gilmore, Andrea R. Seisler  
 Affiliation: Penn State University  
 WorkflowTitle: Developing R Code for the Processing and Analysis of Optic Flow Data  
 WorkflowDiagramURL:  
-Discipline: Psychology    
-Software: R  
+Discipline: Developental Psychology    
+Software: Databrary, GitHub, R  
 DOI_URL:
 ---
 
@@ -20,39 +20,21 @@ Reproducibility means that the processing of a dataset can be created multiple t
 
 ##### Workflow diagram
 
-The core of your case study is a diagrammatic workflow sketch, which depicts your the entire pipeline of your workflow. Think of this like a circuit diagram: boxes represent steps, tools, or other disjoint components, and arrows show how outputs of particular steps feed as inputs to others. This diagram will be complemented by a textual narrative.
+[Workflow Diagram](rgilmore.pdf)
 
-We recommend the site [http://draw.io](http://draw.io) for creating this diagram. Please draw your diagram so that it reads from left to right, and fills no more than half a standard US letter page. Use Helvetica font with at least 10 or 11pt size.
-
-While creating your diagram, be sure to consider:
-
-* specialized tools and where they enter your workflow
-* the "state" of the data at each stage
-* collaborators
-* version control repos
-* products produced at various stages (graphics, summaries, etc)
-* databases
-* whitepapers
-* customers
-
-Each of the two example case studies include a workflow diagram you can also use for guidance.
-
-Please save your diagram alongside this completed case study template.
 
 ##### Workflow narrative
 
 This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays consisting of two side-by-side, time varying annular shaped optic flow displays. One display depicted random (0% coherent) motion while the other depicted radial or translational motion at one of two coherence level profiles (20, 40, 60, 80%) or (15,30,45,60%). The participant indicated their choice of which display consisted of coherent motion by pointing to the monitor. A speed of 2 or 8 deg/s was used for a single run. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. The csv file includes pattern type and coherency level of the stimuli, and reaction time and accuracy of the participant responses.
 
-All output data files were transferred from the data collection computer manually to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered manually into Databrary as part of the participan session file and into a .csv file for all participants and placed on Box. R code was designed to process the data and produce plots for data analyses.
+All output data files were transferred from the data collection computer manually to Databrary (for sharability) and Box (for analysis). Metadata for all participants was entered manually into Databrary as part of the participant session file and into a .csv file for all participants and placed on Box. R code was designed to process the data and produce plots for data analyses.
 
-The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed. Once the aggregate plots are generated, results were summarized and results were prepared for publication in a conference abstract and/or a journal.
+The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed. Once the aggregate plots are generated, results were summarized and prepared for publication in a conference abstract and/or a journal.
 
 It takes longer to generate code, but the resulting ease of generating data usable for publication much easier. The human error is also reduced by automating as much of the data processing steps as possible.
 
-All data files are shared on Databrary (https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on GitHub (gilmorelab/moco-3pattern-psychophysics/child-laminar-radial). **The R files and merged datafile need to be added to GitHub** 
-Links to the GitHub repository and any resulting publications are included in the Databrary volume.
-
-
+All data files are shared on [Databrary](https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. Analysis files are shared on [GitHub](https://github.com/gilmore-lab/moco-3-pattern-psychophysics/tree/master/child-laminar-radial). **The R files and merged datafile need to be added to GitHub** 
+Links to the GitHub repository and any resulting publications/presentations are included in the Databrary volume.
 
 A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. R makes it easy to create a workflow for a type of data and reproduce it as more data are collected. This makes data analyses an on going process and not something that is saved up until the end which makes writing abstracts and papers less cumbersome.
 
