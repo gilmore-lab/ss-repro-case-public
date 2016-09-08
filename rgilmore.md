@@ -11,7 +11,7 @@ DOI_URL:
 
 1) Who are you and what is your research field? Include your name, affiliation, discipline, and the background or context of your overall research that is necessary specifically to introduce your specific case study.
 
-My name is Andrea Seisler and I am the lab manager for the Brain Development Laboratory run by Rick Gilmore at Penn State University. I have a background in biomedical engineering with a focus on imaging. In the last few years I have been assisting Dr. Gilmore with data collection, processing, analysis and publication of various behavioral and EEG based optic flow studies. 
+My name is Andrea Seisler and I am the lab manager for the Brain Development Laboratory run by Dr. Rick Gilmore at Penn State University. I have a background in biomedical engineering with a focus on imaging. In the last few years I have been assisting Dr. Gilmore with data collection, processing, analysis and publication of various behavioral and EEG based optic flow studies. 
 
 2) Define what the term "reproducibility" means to you generally and/or in the particular context of your case study.
 
@@ -26,11 +26,15 @@ Reproducibility means that the processing of a dataset can be created multiple t
 
 This study examined whether the detection of optic flow in child observers varies by pattern and speed in similar ways to adults. Data were collected utilizing Matlab and PsychToolbox to generate the stimuli displays consisting of two side-by-side, time varying annular shaped optic flow displays. One display depicted random (0% coherent) motion while the other depicted radial or translational motion at one of two coherence level profiles (20, 40, 60, 80%) or (15,30,45,60%). The participant indicated their choice of which display consisted of coherent motion by pointing to the monitor. A speed of 2 or 8 deg/s was used for a single run. Four separate output (csv) files, from 4 blocks of data, were generated for each participant. The csv file includes pattern type and coherency level of the stimuli, and reaction time and accuracy of the participant responses. Video was collected during participant data collection.
 
-All output data files were transferred from the data collection computer manually to Databrary (for sharability). Some were transferred to Box (for analysis and removal of PII) then ultimately placed in a repo on GitHub. Metadata for all participants was entered manually into Databrary as part of the participant session file and into a .csv file for all participants and placed on Box. The Metadata .csv not including PII is then uploaded to the GitHub repo. R code was designed to process the data and produce plots for data analyses.
+During the recruitment phase, we have access to variouse personally identifiable information (PII) which allows us to mail, email, and call participant families within our selected birthday range of participants. These information are not used as part of the information entered as metadata in Databrary. We only utilize a random participant ID, birthdate, test date. Where birthdate is not accessible to anyone not directly involved with the project, only age at test and year of test is made visible. For analysis purposes, the birthdate and test date are converted to age at test so the PII is removed.
 
-The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed. Once the aggregate plots are generated, results were summarized and prepared for publication in a conference abstract and/or a journal.
+After a data collection session is complete, all output data files generated are transferred from the data collection computer manually to Databrary (for sharability). Some were transferred to Box (for analysis and removal of PII) then ultimately placed in a repo on GitHub. Metadata for all participants was entered manually into Databrary as part of the participant session file and into a .csv file for all participants and placed on Box. The Metadata .csv not including PII is then uploaded to the GitHub repo. R code was designed to process the data and produce plots for data analyses. 
 
-Before the R code can be written, the output variables of interest must be decided upon as well as the relevant plots to display the individual and aggregate data. Once these are determined, R code is written. Generating data usable for publication becomes much easier. Human error is also reduced by automating as many of the data processing steps as possible.
+All of the data transfer and manual entry of metadata are completed by the experimenter of the data collection session. R code was designed by the lab director. Until the code is complete and documentation is written on how to run an analysis, the lab director continues to run the analyses.
+
+Before the R code can be written, the output variables of interest must be decided upon as well as the relevant plots to display the individual and aggregate data. The R code was written in a few steps. The first step was to clean (remove duplicate, unnecessary, and PII) and merge all participant session output information and associated metadata into a single file making it easily indexable for further analyses (import-clean-export.R). The second step was to take this single datafile and generate aggregate plots for the reaction time and percent correct vs. coherence, pattern and speed. Once the aggregate plots are generated, results were summarized and prepared for publication in a conference abstract and/or a journal.
+
+ Generating data usable for publication becomes much easier. Human error is also reduced by automating as many of the data processing steps as possible.
 
 All data files are shared on [Databrary](https://nyu.databrary.org/volume/218) including the output data files, video files, and participant metadata. The entire dataset is citable and the citation is provided. Analysis files are shared on [GitHub](https://github.com/gilmore-lab/moco-3-pattern-psychophysics/tree/master/child-laminar-radial). **The R files and merged datafile need to be added to GitHub** 
 Links to the GitHub repository and any resulting publications/presentations are included in the Databrary volume.
@@ -75,12 +79,14 @@ The updating of the participant metadata file is made relatively easy as the met
 ##### Key benefits
 *Discuss one or several sections of your workflow that you feel makes your approach better than the "normal" non-reproducible workflow that others might use in your field. What does your workflow do better than the one used by your lesser-skilled colleagues and students, and why? What would you want them to learn from your example? (200-400 words)*
 
+R contains many merge commands (e.g. merge,lapply) which makes it efficient to complete actions on mutiple datasets at a time and to easily add datasets to the analyses as they are collected. 
+
 ##### Key tools
 *If applicable, provide a detailed description of a particular specialized tool that plays a key role in making your workflow reproducible, if you think that the tool might be of broader interest or relevance to a general audience. (200-400 words)*
 
 Databrary allows for all of our data to be placed or referenced (e.g. Git, publications)in one place. This is upload as you go so placing all of the data in a single organized place is not cumbersome or difficult if you waited until all data collection was complete. Databrary volumes can be kept private to your research group until they are complete and you are ready to share your data with other researchers. Once is it shared, it is searchable by other researchers.
 
-Specific R command?
+Specific R command? lapply, plotting commands?
 
 ##### General questions about reproducibility
 
@@ -92,7 +98,11 @@ Reproducibility is important because if someone else cannot reproduce your workf
 
 2) How or where did you learn the reproducible practices described in your case study? Mentors, classes, workshops, etc.
 
+Self-teaching through online training and book learning.
+
 3) What do you see as the major pitfalls to doing reproducible research in your domain, and do you have any suggestions for working around these? Examples could include legal, logistical, human, or technical challenges.
+
+Ensuring that everything on GitHub could be forked and rerun by another user.
 
 4) What do you view as the major incentives for doing reproducible research?
 
@@ -101,5 +111,11 @@ Reproducibility is important because if someone else cannot reproduce your workf
 Automate as much as possible.
 Documentation, Documentation, Documentation!
 
+After the post processing code is completed and accurate, it should be as automated as possible so that every iteration of the code, based upon an increase in participant numbers, is exactly the same. At this point, with instructions, anyone should be able to run the analysis.
+
 6) Would you recommend any specific websites, training courses, or books for learning more about reproducibility?
+
+R Coding and R Markdown training: https://www.rstudio.com/online-learning/
+
+
 
