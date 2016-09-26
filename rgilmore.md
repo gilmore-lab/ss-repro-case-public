@@ -43,9 +43,11 @@ In addition to storing text-based data on Databrary, we store it in a GitHub rep
 
 The data cleaning/file merging workflow consists of a series of steps. First, information about the participant ID number, speed condition, and block are extracted from the individual file names. These elements are added to an R data frame with the block-specific, trial-by-trial data. Then, the individual block data files can be merged or concatenated to create a session-level data frame for that participant. Using R's *lapply*, *Reduce*, and *merge* functions it is possible to carry out these operations across a set of participant files to create a single data frame for subsequent analysis which is saved as a CSV file. The `analyses/import-clean-export.R` script illustrates how these steps are done.  An example of the aggregate output data file created on 2016-09-15 from running this script is `analyses/aggregate-data/moco-beh-child.csv`. This file gets updated on GitHub periodically during the course of data collection. The second step is to analyze the data. We have not conducted formal analysis yet as we are still collecting data, but we have created some functions to visualize the patterns. The `analyses/plot.aggregate.R` function shows how we import the data file generated previously, summarize it, and create several illustrative plots (see `analyses/img`).
 
-A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. The combination of Databrary, GitHub and R makes it easy to create a workflow for a particular type of data and reproduce it as more data are collected. This makes data sharing and analyses an ongoing process, and not something that is saved up until the end of a study. This which makes writing abstracts and papers less cumbersome.  
----
+A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. The combination of Databrary, GitHub and R makes it easy to create a workflow for a particular type of data and reproduce it as more data are collected. This makes data sharing and analyses an ongoing process, and not something that is saved up until the end of a study. This makes writing abstracts and papers less cumbersome as the data is all in one place and ready to go.  
 
+
+
+-----
 Referring to your diagram, describe your workflow for this specific project, from soup to nuts. Imagine walking a friend or a colleague through the basic steps, paying particular attention to links between steps. Don't forget to include "messy parts", loops, aborted efforts, and failures.
 
 It may be helpful to consider the following questions, where interesting, applicable, and non-obvious from context. For each part of your workflow:
@@ -87,8 +89,6 @@ R contains many commands (e.g. *merge*, *lapply*, *Reduce*) which make it effici
 *If applicable, provide a detailed description of a particular specialized tool that plays a key role in making your workflow reproducible, if you think that the tool might be of broader interest or relevance to a general audience. (200-400 words)*
 
 Databrary allows for all of our data to be stored or referenced (e.g. GitHub, publications) in one place. This is upload as you go so placing all of the data in a single organized place is not cumbersome or difficult if you waited until all data collection was complete. Databrary volumes can be kept private to your research group until they are complete and you are ready to share your data with other researchers. Once is it shared, it is searchable by other researchers.
-
-Specific R command? lapply, plotting commands?
 
 ##### General questions about reproducibility
 
