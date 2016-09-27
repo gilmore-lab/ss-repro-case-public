@@ -47,8 +47,7 @@ The data cleaning/file merging workflow consists of a series of steps. First, in
 
 A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. The combination of Databrary, GitHub and R makes it easy to create a workflow for a particular type of data and reproduce it as more data are collected. This makes data sharing and analyses an ongoing process, and not something that is saved up until the end of a study. This makes writing abstracts and papers less cumbersome.  
 
----
-
+-----
 Referring to your diagram, describe your workflow for this specific project, from soup to nuts. Imagine walking a friend or a colleague through the basic steps, paying particular attention to links between steps. Don't forget to include "messy parts", loops, aborted efforts, and failures.
 
 It may be helpful to consider the following questions, where interesting, applicable, and non-obvious from context. For each part of your workflow:
