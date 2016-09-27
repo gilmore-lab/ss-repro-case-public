@@ -7,7 +7,6 @@ Software: Databrary, GitHub, R
 DOI_URL:
 
 ##### Introduction
-*Please answer these introductory questions for your case study in a few sentences.*
 
 1) Who are you and what is your research field? Include your name, affiliation, discipline, and the background or context of your overall research that is necessary specifically to introduce your specific case study.
 
@@ -47,52 +46,21 @@ The data cleaning/file merging workflow consists of a series of steps. First, in
 
 A similar workflow is utilized for multiple studies in this lab including EEG and other behavioral studies. The combination of Databrary, GitHub and R makes it easy to create a workflow for a particular type of data and reproduce it as more data are collected. This makes data sharing and analyses an ongoing process, and not something that is saved up until the end of a study. This makes writing abstracts and papers less cumbersome.  
 
------
-Referring to your diagram, describe your workflow for this specific project, from soup to nuts. Imagine walking a friend or a colleague through the basic steps, paying particular attention to links between steps. Don't forget to include "messy parts", loops, aborted efforts, and failures.
-
-It may be helpful to consider the following questions, where interesting, applicable, and non-obvious from context. For each part of your workflow:
-
-* **Frequency:** How often does the step happen and how long does it take?
-* **Who:** Which members of your team participate (or not)?
-* **Manual/Automated:** Is the step automated or does it involve human intervention (if so, is it recorded)?
-* **Tools:** Which software or online tools are used in the step? How are they used?
-
-In addition to detailing the steps of the workflow, you may wish to consider the following questions about the workflow as a whole:
-
-* **Data:** Is your raw data online?
-   * Is it citeable?
-   * Does the license allow external researchers to publish a replication/confirmation of your published work?
-* **Software:** Is the software online?
-   * Is there documentation?
-   * Are there tests?
-   * Are there example input files alongside the code?
-* **Processing:** Is your data processing workflow online?
-   * Are the scripts documented?
-   * Would an external researcher know what order to run them in?
-   * Would they know what parameters to use?
-
-*(500-800 words)*
-
 ##### Pain points
-*Describe in detail the steps of a reproducible workflow which you consider to be particularly painful. How do you handle these? How do you avoid them? (200-400 words)*
 
 The data transfer to Databrary can be time consuming. The output datafiles are stored locally in a folder for the CSV files and another folder for the .mp4 files. Uploading data (.mp4 and .csv) to Databrary has to happen manually as Databrary does not currently reorder files by file name. The .csv data also needs to be uploaded to Box/GitHub manually.
 
 It's relatively easy to update the participant metadata file by exporting the data from Databrary as a .csv. From there the unnecessary columns for a particular analysis (e.g. Race, Ethnicity, Task name) can be dropped, leaving only the participant ID, test date, day age, and gender columns.
 
 ##### Key benefits
-*Discuss one or several sections of your workflow that you feel makes your approach better than the "normal" non-reproducible workflow that others might use in your field. What does your workflow do better than the one used by your lesser-skilled colleagues and students, and why? What would you want them to learn from your example? (200-400 words)*
 
-R contains many commands (e.g. *merge*, *lapply*, *Reduce*) which make it efficient to complete actions on mutiple datasets at a time and to easily add datasets to the analyses as they are collected. We regularly 'borrow' a script used for one purpose and reuse it for a new study. By automating the data file manipulation steps, we reduce the likelihood of errors.
+R contains many commands (e.g. *merge*, *lapply*, *Reduce*) which make it efficient to complete actions on multiple datasets at a time and to easily add datasets to the analyses as they are collected. We regularly 'borrow' a script used for one purpose and reuse it for a new study. By automating the data file manipulation steps, we reduce the likelihood of errors.
 
 ##### Key tools
-*If applicable, provide a detailed description of a particular specialized tool that plays a key role in making your workflow reproducible, if you think that the tool might be of broader interest or relevance to a general audience. (200-400 words)*
 
 Databrary allows for all of our data to be stored or referenced (e.g. GitHub, publications) in one place, and it encourages us to upload data as it is collected. This upload-as-you-go work flow is less cumbersome than post hoc data curation. Databrary volumes can be kept private to our research group until they are complete and we are ready to share the data with other researchers. Our practice is to share once we have presented our work in public or had a paper submitted for publication. Once a dataset is shared, the Databrary system creates a DOI for the dataset. This makes the dataset searchable by other researchers.
 
 ##### General questions about reproducibility
-
-*Please provide short answers (a few sentences each) to these general questions about reproducibility and scientific research. Rough ideas are appropriate here, as these will not be published with the case study. Please feel free to answer all or only some of these questions.*
 
 1) Why do you think that reproducibility in your domain is important?
 
